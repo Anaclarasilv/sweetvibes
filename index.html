@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confeitaria </title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="chocolate-header">
+        <div class="container">
+            <div class="text-center py-5">
+                <h1 class="display-4">Sweet Vibes</h1>
+                <p class="lead">Brigadeiros e Doces Artesanais</p>
+            </div>
+            <div class="chocolate-gallery">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="chocolate-item">
+                            <img src="https://images.unsplash.com/photo-1541783245831-57d6fb0926d3" alt="Brigadeiro Tradicional" class="img-fluid rounded">
+                            <h3>Brigadeiro Tradicional</h3>
+                            <p>O clássico brigadeiro de chocolate ao leite</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="chocolate-item">
+                            <img src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32" alt="Brigadeiro Gourmet" class="img-fluid rounded">
+                            <h3>Brigadeiro Gourmet</h3>
+                            <p>Brigadeiros especiais com chocolate belga</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="chocolate-item">
+                            <img src="https://images.unsplash.com/photo-1582176604856-e824b4736522" alt="Brigadeiro Branco" class="img-fluid rounded">
+                            <h3>Brigadeiro Branco</h3>
+                            <p>Delicioso brigadeiro de chocolate branco</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="produtos">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="clientes">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="coffee-break">Coffee Break</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="servicos">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="encomendas">Encomendas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div id="alertArea"></div>
+        <div id="mainContent"></div>
+    </div>
+
+    <!-- Templates -->
+    <template id="produtosTemplate">
+        <div class="products-section">
+            <h2 class="section-title">Nossos Produtos</h2>
+            
+            <div class="category-section mb-5">
+                <h3 class="category-title">Brigadeiros Clássicos</h3>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="product-card" data-product-id="1">
+                            <div class="product-img-container">
+                                <img src="https://images.unsplash.com/photo-1541783245831-57d6fb0926d3" 
+                                     alt="Brigadeiro Tradicional" 
+                                     class="img-fluid rounded product-img">
+                            </div>
+                            <div class="product-info">
+                                <h4>Brigadeiro Tradicional</h4>
+                                <p>O autêntico brigadeiro brasileiro, feito com chocolate ao leite de alta qualidade e granulado.</p>
+                                <p class="price">R$ 3,00 /unidade</p>
+                                <button class="btn btn-primary btn-block view-details">Ver Detalhes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="product-card" data-product-id="2">
+                            <div class="product-img-container">
+                                <img src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32" 
+                                     alt="Brigadeiro Gourmet" 
+                                     class="img-fluid rounded product-img">
+                            </div>
+                            <div class="product-info">
+                                <h4>Brigadeiro Gourmet</h4>
+                                <p>Brigadeiro especial feito com chocolate belga e finalizado com cacau em pó.</p>
+                                <p class="price">R$ 4,50 /unidade</p>
+                                <button class="btn btn-primary btn-block view-details">Ver Detalhes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="product-card" data-product-id="3">
+                            <div class="product-img-container">
+                                <img src="https://images.unsplash.com/photo-1582176604856-e824b4736522" 
+                                     alt="Brigadeiro Branco" 
+                                     class="img-fluid rounded product-img">
+                            </div>
+                            <div class="product-info">
+                                <h4>Brigadeiro Branco</h4>
+                                <p>Delicada versão com chocolate branco e coco ralado.</p>
+                                <p class="price">R$ 3,50 /unidade</p>
+                                <button class="btn btn-primary btn-block view-details">Ver Detalhes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-section mb-5">
+                <h3 class="category-title">Brigadeiros Especiais</h3>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="product-card" data-product-id="4">
+                            <img src="https://images.unsplash.com/photo-1585653621032-a5fec164ee92" alt="Brigadeiro de Paçoca" class="img-fluid rounded product-img">
+                            <div class="product-info">
+                                <h4>Brigadeiro de Paçoca</h4>
+                                <p>Brigadeiro com paçoca genuína, coberto com paçoca triturada.</p>
+                                <p class="price">R$ 4,00 /unidade</p>
+                                <button class="btn btn-primary btn-block view-details">Ver Detalhes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="product-card" data-product-id="5">
+                            <img src="https://images.unsplash.com/photo-1587668178277-295251f900ce" alt="Brigadeiro de Nutella" class="img-fluid rounded product-img">
+                            <div class="product-info">
+                                <h4>Brigadeiro de Nutella</h4>
+                                <p>Brigadeiro premium feito com Nutella original e avelãs.</p>
+                                <p class="price">R$ 5,00 /unidade</p>
+                                <button class="btn btn-primary btn-block view-details">Ver Detalhes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="product-card" data-product-id="6">
+                            <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e" alt="Brigadeiro de Pistache" class="img-fluid rounded product-img">
+                            <div class="product-info">
+                                <h4>Brigadeiro de Pistache</h4>
+                                <p>Brigadeiro gourmet com pistache natural e cobertura de pistache moído.</p>
+                                <p class="price">R$ 5,50 /unidade</p>
+                                <button class="btn btn-primary btn-block view-details">Ver Detalhes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-section mb-5">
+                <h3 class="category-title">Doces Especiais</h3>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="product-card" data-product-id="7">
+                            <img src="https://images.unsplash.com/photo-1587244141530-6b594f1a8129" alt="Trufa de Chocolate" class="img-fluid rounded product-img">
+                            <div class="product-info">
+                                <h4>Trufa de Chocolate</h4>
+                                <p>Trufa artesanal com recheio cremoso de chocolate belga.</p>
+                                <p class="price">R$ 6,00 /unidade</p>
+                                <button class="btn btn-primary btn-block view-details">Ver Detalhes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="product-card" data-product-id="8">
+                            <img src="https://images.unsplash.com/photo-1571506165871-ee72a35bc9d4" alt="Bombom de Morango" class="img-fluid rounded product-img">
+                            <div class="product-info">
+                                <h4>Bombom de Morango</h4>
+                                <p>Morango fresco coberto com chocolate belga.</p>
+                                <p class="price">R$ 7,00 /unidade</p>
+                                <button class="btn btn-primary btn-block view-details">Ver Detalhes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="product-card" data-product-id="9">
+                            <img src="https://images.unsplash.com/photo-1548907040-4d42b61be2b3" alt="Brownie Recheado" class="img-fluid rounded product-img">
+                            <div class="product-info">
+                                <h4>Brownie Recheado</h4>
+                                <p>Brownie artesanal com recheio de brigadeiro.</p>
+                                <p class="price">R$ 8,00 /unidade</p>
+                                <button class="btn btn-primary btn-block view-details">Ver Detalhes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Modal de Detalhes do Produto -->
+    <div class="modal fade" id="productDetailsModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header chocolate-gradient">
+                    <h5 class="modal-title text-white">Detalhes do Produto</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img id="modalProductImage" src="" alt="" class="img-fluid rounded mb-3">
+                        </div>
+                        <div class="col-md-6">
+                            <h3 id="modalProductName" class="mb-3"></h3>
+                            <div class="product-details">
+                                <p id="modalProductDescription" class="mb-4"></p>
+                                <div class="detail-item">
+                                    <h6>Ingredientes Principais:</h6>
+                                    <p id="modalProductIngredients"></p>
+                                </div>
+                                <div class="detail-item">
+                                    <h6>Valor Unitário:</h6>
+                                    <p id="modalProductPrice"></p>
+                                </div>
+                                <div class="detail-item">
+                                    <h6>Prazo de Validade:</h6>
+                                    <p id="modalProductExpiry"></p>
+                                </div>
+                                <div class="detail-item">
+                                    <h6>Tempo de Produção:</h6>
+                                    <p id="modalProductProductionTime"></p>
+                                </div>
+                                <div class="detail-item">
+                                    <h6>Disponibilidade:</h6>
+                                    <p id="modalProductAvailability"></p>
+                                </div>
+                                <div class="detail-item">
+                                    <h6>Variações Disponíveis:</h6>
+                                    <div id="modalProductVariations"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" onclick="App.adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <template id="clientesTemplate">
+        <div class="card">
+            <div class="card-header">
+                <h2>Cadastro de Clientes</h2>
+            </div>
+            <div class="card-body">
+                <form id="clienteForm">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="nome">Nome</label>
+                            <input type="text" class="form-control" id="nome" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="cpf">CPF</label>
+                            <input type="text" class="form-control" id="cpf" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" class="form-control" id="telefone" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="dataNascimento">Data de Nascimento</label>
+                            <input type="date" class="form-control" id="dataNascimento" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="endereco">Endereço</label>
+                        <input type="text" class="form-control" id="endereco" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="jaComprou">
+                            <label class="custom-control-label" for="jaComprou">Já comprou antes</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2>Lista de Clientes</h2>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table" id="clientesTable">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>CPF</th>
+                                <th>Telefone</th>
+                                <th>Endereço</th>
+                                <th>Data Nascimento</th>
+                                <th>Já Comprou</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="coffee-breakTemplate">
+        <div class="card">
+            <div class="card-header">
+                <h2>Cadastro de Coffee Break</h2>
+            </div>
+            <div class="card-body">
+                <form id="coffeeBreakForm">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="tipoEvento">Tipo de Evento</label>
+                            <input type="text" class="form-control" id="tipoEvento" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="dataHora">Data e Hora</label>
+                            <input type="datetime-local" class="form-control" id="dataHora" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <label for="local">Local</label>
+                            <input type="text" class="form-control" id="local" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="quantidadePessoas">Quantidade de Pessoas</label>
+                            <input type="number" class="form-control" id="quantidadePessoas" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="itensIncluidos">Itens Incluídos (um por linha)</label>
+                        <textarea class="form-control" id="itensIncluidos" rows="3" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="montagemLocal">
+                                <label class="custom-control-label" for="montagemLocal">Montagem no Local</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="valorFechado">Valor Fechado</label>
+                            <input type="number" step="0.01" class="form-control" id="valorFechado" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2>Lista de Coffee Breaks</h2>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table" id="coffeeBreaksTable">
+                        <thead>
+                            <tr>
+                                <th>Tipo de Evento</th>
+                                <th>Data e Hora</th>
+                                <th>Local</th>
+                                <th>Qtd. Pessoas</th>
+                                <th>Montagem Local</th>
+                                <th>Valor</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="servicosTemplate">
+        <div class="card">
+            <div class="card-header">
+                <h2>Cadastro de Serviços</h2>
+            </div>
+            <div class="card-body">
+                <form id="servicoForm">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="tipo">Tipo de Serviço</label>
+                            <select class="form-control" id="tipo" required></select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="descricao">Descrição</label>
+                            <input type="text" class="form-control" id="descricao" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="preco">Preço</label>
+                            <input type="number" step="0.01" class="form-control" id="preco" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2>Lista de Serviços</h2>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table" id="servicosTable">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Descrição</th>
+                                <th>Preço</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="encomendasTemplate">
+        <div class="card">
+            <div class="card-header">
+                <h2>Cadastro de Encomendas</h2>
+            </div>
+            <div class="card-body">
+                <form id="encomendaForm">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="nomeCliente">Nome do Cliente</label>
+                            <input type="text" class="form-control" id="nomeCliente" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" class="form-control" id="telefone" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="dataEntrega">Data de Entrega</label>
+                            <input type="datetime-local" class="form-control" id="dataEntrega" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="tipoBolo">Tipo de Bolo</label>
+                            <select class="form-control" id="tipoBolo" required></select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="saborMassa">Sabor da Massa</label>
+                            <input type="text" class="form-control" id="saborMassa" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="recheio">Recheio</label>
+                            <input type="text" class="form-control" id="recheio" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="cobertura">Cobertura</label>
+                            <input type="text" class="form-control" id="cobertura" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="peso">Peso (kg)</label>
+                            <input type="number" step="0.1" class="form-control" id="peso" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="tamanho">Tamanho</label>
+                            <input type="text" class="form-control" id="tamanho" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="valorTotal">Valor Total</label>
+                            <input type="number" step="0.01" class="form-control" id="valorTotal" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="mensagem">Mensagem Personalizada</label>
+                            <textarea class="form-control" id="mensagem" rows="2"></textarea>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="formaPagamento">Forma de Pagamento</label>
+                            <select class="form-control" id="formaPagamento" required></select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2>Lista de Encomendas</h2>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table" id="encomendasTable">
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Telefone</th>
+                                <th>Data Entrega</th>
+                                <th>Tipo</th>
+                                <th>Status</th>
+                                <th>Valor</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Modal de Mensagens -->
+    <div class="modal fade" id="mensagemModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mensagem</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="mensagemConteudo"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="util.js"></script>
+    <script src="models.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 
