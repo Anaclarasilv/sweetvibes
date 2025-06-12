@@ -121,17 +121,17 @@ body {
 }
 
 .product-card:hover img {
-    transform: scale(61.05);
-    filter: brightness(1.1);
+    transform: scale(1.4);
+    filter: brightness(1.0);
 }
 
 .product-info {
-    padding: 1.5rem;
+    padding: 1.0rem;
 }
 
 .product-info h4 {
     color: var(--chocolate-dark);
-    font-size: 1.25rem;
+    font-size: 1.0rem;
     margin-bottom: 1rem;
 }
 
@@ -462,7 +462,7 @@ header img {
     font-size: 2rem;
     opacity: 0;
     transition: opacity 0.3s ease;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.463);
     pointer-events: none;
     z-index: 2;
 }
