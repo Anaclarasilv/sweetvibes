@@ -1,0 +1,21 @@
+{
+    "name": "Sweet Vibes",
+    "short_name": "Sweet",
+    "icons": [
+      {
+        "src": "freepik__logo-design-for-sweet-vibes-brigadeiro-shop-earthy__66798.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "maskable"
+      },
+      {
+        "src": "freepik__logo-design-for-sweet-vibes-brigadeiro-shop-earthy__66798.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable"
+      }
+    ],
+    "theme_color": "#51abb2",
+    "background_color": "#51abb2",
+    "display": "standalone"
+  }
