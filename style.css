@@ -2,14 +2,14 @@
 /* Cores do tema */
 :root {
     /*degrade*/
-    --chocolate-dark: #341804;
-    --chocolate-medium: #A0522D;
+    --chocolate-dark: #783e14;
+    --chocolate-medium: #290f05;
     /*campo de cadastro*/
     --chocolate-light: #f8f8f8;
     /*linha*/
-    --cream-dark: #4d2e0d;
+    
     /*MOUSE Passa em cima*/
-    --cream-medium: #FFDEAD;
+    --cream-medium: #130e05;
     /*COR DA FONTE E FUNDO*/
     --cream-light: #eecda8;
     
@@ -28,7 +28,7 @@ body {
     color: var(--cream-light);
     padding: 2rem 0;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 8px rgba(239, 200, 174, 0.986);
+    box-shadow: 0 4px 8px rgb(239, 200, 174);
 }
 
 .chocolate-header h1 {
@@ -46,7 +46,7 @@ body {
 }
 
 .chocolate-item {
-    background: rgb(219, 211, 205);
+    background: rgb(18, 9, 2);
     border-radius: 10px;
     padding: 1rem;
     margin-bottom: 2rem;
@@ -59,7 +59,7 @@ body {
 }
 
 .chocolate-item img {
-    width: 56755%;
+    width: 565%;
     height: 300px;
     object-fit: cover;
     border-radius: 8px;
@@ -119,9 +119,9 @@ body {
     object-fit: cover;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
-
+/*zoom*/
 .product-card:hover img {
-    transform: scale(1.4);
+    transform: scale(1.1);
     filter: brightness(1.0);
 }
 
@@ -159,7 +159,7 @@ header {
 header h1 {
     margin-bottom: 2rem;
     font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 1px 4px rgba(251, 240, 240, 0.3);
 }
 
 header img {
@@ -237,7 +237,7 @@ header img {
 
 .form-control:focus {
     border-color: var(--chocolate-light);
-    box-shadow: 0 0 0 0.2rem rgba(139, 69, 19, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(139, 69, 19, 0.478);
 }
 
 .alert {
@@ -246,21 +246,15 @@ header img {
 }
 
 .alert-success {
-    background-color: #DFF0D8;
-    border-color: #D6E9C6;
-    color: #3C763D;
+    background-color: #e0aa779a;
+    border-color: #000000;
+    color: #522e0f;
 }
 
 .alert-danger {
     background-color: #F2DEDE;
-    border-color: #EBCCD1;
-    color: #A94442;
-}
-
-/* Status badges para encomendas */
-.badge-pendente {
-    background-color: var(--chocolate-light);
-    color: var(--chocolate-dark);
+    border-color: #000000;
+    color: #ff0400;
 }
 
 .badge-pronto {
@@ -271,16 +265,6 @@ header img {
 .badge-entregue {
     background-color: var(--chocolate-dark);
     color: var(--cream-light);
-}
-
-/* Seção de Contato */
-#contato {
-    background-color: white;
-    padding: 3rem;
-    border-radius: 8px;
-    margin: 2rem auto;
-    max-width: 800px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 #contato form {
@@ -375,13 +359,13 @@ header img {
 }
 
 .detail-item p {
-    color: #666;
+    color: #1c0202;
     margin-bottom: 0;
 }
 
 #modalProductImage {
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(44, 44, 44, 0.505);
     transition: transform 0.3s ease;
 }
 
