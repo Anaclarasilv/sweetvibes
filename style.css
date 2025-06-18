@@ -28,7 +28,7 @@ body {
     color: var(--cream-light);
     padding: 2rem 0;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 8px rgb(239, 200, 174);
+    box-shadow: 0 4px 8px rgba(239, 200, 174, 0.945);
 }
 
 .chocolate-header h1 {
@@ -50,7 +50,7 @@ body {
     border-radius: 10px;
     padding: 1rem;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(230, 219, 219, 0.247);
+    box-shadow: 0 4px 6px rgba(230, 219, 219, 0);
     transition: transform 0.3s ease;
 }
 
@@ -437,20 +437,8 @@ header img {
     filter: brightness(0.8);
 }
 
-.product-img-container::after {
-    content: '🔍';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.463);
-    pointer-events: none;
-    z-index: 2;
-}
-
 .product-img-container:hover::after {
     opacity: 1;
 } 
+  
+ 
