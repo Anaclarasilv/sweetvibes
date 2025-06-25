@@ -14,6 +14,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <link rel="manifest" href="manifest.json">
+        <link rel="html" href="carrinho.html">
         <link rel="icon" href="freepik__logo-design-for-sweet-vibes-brigadeiro-shop-earthy__66798.png" type="image/x-icon">
         <link rel="apple-touch-icon" sizes="192x192" href="folder/web-app-manifest-192x192.png">
         <link rel="icon" type="image/png" sizes="96x96" href="folder/favicon-96x96.png">
@@ -74,6 +75,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-page="coffee-break">Coffee Break</a>
                     </li>
+                    <li class="carrinho">
+                            <li class="nav-item" class="nav-link" href="#" data-page="Carrinho">Carrinho</a>
+                        <p id="total">Total: R$ 0,00</p>
+                    </div>
+                        
                 </ul>
             </div>
         </div>
@@ -265,9 +271,18 @@
                         </div>
                     </div>
                 </div>
+
+    <div class="produtos">
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" onclick="App.adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button> 
+                    <footer class="bg-light py-4 mt-5">
+                        <div class="container text-center">
+                            <a href="https://wa.me/554484223908" target="_blank" class="btn btn-success btn-lg" style="font-size:1.3rem;">
+                                <img src="whatsapp.svg" alt="WhatsApp" style="width:28px;vertical-align:middle;margin-right:8px;"> WhatsApp
+                            </a>
+                        </div>
+                    </footer>
+    </div>
                 </div>
             </div>
         </div>
@@ -575,6 +590,17 @@
             </div>
         </div>
     </div>
+     <!-- Seção de Contato WhatsApp -->
+     <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <h4 class="mb-3">Fale conosco pelo WhatsApp</h4>
+            <a href="https://wa.me/554484223908" target="_blank" class="btn btn-success btn-lg" style="font-size:1.3rem;">
+                <img src="whatsapp.svg" alt="WhatsApp" style="width:28px;vertical-align:middle;margin-right:8px;"> WhatsApp
+            </a>
+            <p class="mt-2 mb-0">Clique no botão para iniciar uma conversa diretamente com a nossa equipe!</p>
+        </div>
+    </footer>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
@@ -582,6 +608,8 @@
     <script src="util.js"></script>
     <script src="models.js"></script>
     <script src="app.js"></script>
+    <script src="carrinho.js"></script>
+    
 
 </body>
 </html> 
