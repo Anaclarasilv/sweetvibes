@@ -440,5 +440,33 @@ header img {
 .product-img-container:hover::after {
     opacity: 1;
 } 
+footer.bg-light {
+    background-color: #000000; /* Brown clássico da paleta marrom */ /* :contentReference[oaicite:1]{index=1} */
+    color: #bd2626; /* texto em cor clara para contraste */
+  }
+  
+  footer.bg-light h4 {
+    color: #8a1f1f; /* branco suave */
+  }
+  
+  footer.bg-light .btn-success {
+    background-color: #5E3C00; /* Saddle Brown escuro */ /* :contentReference[oaicite:2]{index=2} */
+    border-color: #4B2400; /* tom rico para borda */
+  }
+  
+  footer.bg-light .btn-success img {
+    filter: invert(1); /* deixa o ícone visível em botão escuro */
+  }
+  
+  footer.bg-light .btn-success:hover,
+  footer.bg-light .btn-success:focus {
+    background-color: #59260B; /* Seal Brown para foco/hover */ /* :contentReference[oaicite:3]{index=3} */
+    border-color: #3F1E00;
+  }
+  
+  footer.bg-light p {
+    margin-top: 0.5rem;
+    color: #8a1f1f;
+  }
   
  
